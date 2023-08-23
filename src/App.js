@@ -13,6 +13,9 @@ const App = () => {
  const handleDeleteItem = (id) => {
   setItems((items) => items.filter((item) => item.id !== id));
  };
+ const handleClear = () => {
+  setItems([]);
+ };
  const toggleItem = (id, packed) => {
   console.log(packed);
   setItems((items) =>
@@ -28,6 +31,7 @@ const App = () => {
     items={items}
     onDeleteItem={handleDeleteItem}
     onToggleItem={toggleItem}
+    onClear={handleClear}
    />
    <Stats items={items} />
   </div>
