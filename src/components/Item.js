@@ -1,6 +1,13 @@
-const Item = ({ item, onDeleteItem }) => {
+const Item = ({ item, onDeleteItem, onToggleItem }) => {
  return (
   <li>
+   <input
+    type='checkbox'
+    value={item.packed}
+    onChange={(e) => {
+     onToggleItem(item.id, e.target.checked);
+    }}
+   />
    <span
     style={
      item.packed
