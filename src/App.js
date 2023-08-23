@@ -29,7 +29,7 @@ const App = () => {
     onDeleteItem={handleDeleteItem}
     onToggleItem={toggleItem}
    />
-   <Stats />
+   <Stats items={items} />
   </div>
  );
 };
