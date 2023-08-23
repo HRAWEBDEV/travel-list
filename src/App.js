@@ -10,13 +10,17 @@ const initialItems = [
 ];
 
 const App = () => {
- const [packList, setPackList] = useState(initialItems);
+ const [items, setItems] = useState([]);
+
+ const handleAddItem = (newItem) => {
+  setItems((items) => [...items, newItem]);
+ };
 
  return (
   <div className='app'>
    <Logo />
-   <Form />
-   <PackingList list={packList} />
+   <Form onAddItem={handleAddItem} />
+   <PackingList items={items} />
    <Stats />
   </div>
  );
